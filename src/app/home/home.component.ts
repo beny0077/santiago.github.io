@@ -72,9 +72,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       id: 1,
       category: 'Ecommerce',
       title: 'Full Stack E-Commerce',
-      description: 'An integrated Angular 9 and Spring Boot web application. It allows users to browse, shop, and manage their accounts securely using Okta authentication. Customer information and order history are stored and managed in a MySQL DB',
+      description: 'An integrated Angular 9, Spring Boot, and MySQL web application. It allows users to browse, shop, and manage their accounts securely using Okta authentication.',
       image: 'Ecommerce-Project.png',
-      detailsPage: '/angular',
+      detailsPage: 'An Spring Boot integrated with Angular using Okta',
       technologies: ['Angular', 'Spring Boot', 'HTML', 'CSS', 'JavaScript', 'Okta', 'Sql_Server', "Okta"]
     },
     {
@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'CI/CD Workflow',
       description: 'A CI/CD pipeline project using Jenkins to streamline the build and deployment processes. It is setup with SSH-based authentication for secure repo access and utilizes Jenkins credentials for integration. Jenkinsfiles handle build and deploy configurations to deploy to Minikube.',
       image: 'DevOps-Project.png',
-      detailsPage: '/devops',
+      detailsPage: 'A CI/CD pipeline project using Jenkins',
       technologies: ['Jenkins', 'Docker', 'Kubernetes', 'GitHub Actions','Junit']
     },
     {
@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'AI Sentiment Service',
       description: 'AI sentiment analysis service that predict whether a movie review is positive or negative. Built using the Hugging Face library and the T5 model, this service processes a large dataset of 25,000 reviews and trained over 12 epochs.',
       image: 'Prediction-Project.png',
-      detailsPage: '/ai',
+      detailsPage: 'AI sentiment analysis service',
       technologies: ['Python', 'TensorFlow', 'OpenCV', 'Hugging Face', 'Flask']
     },
     {
@@ -101,8 +101,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'AI Note Summarizer',
       description: 'An AI project with optimized hyperparameters to fine-tune the T5 transformer model for text summarization tasks. It has a comprehensive grid search strategy to identify various combinations of hyperparameters to generate high-quality summaries.',
       image: 'Text_Summarization-Project.png',
-      detailsPage: '/ai',
-      technologies: ['Python', 'TensorFlow', 'OpenCV', 'Hugging Face', 'ROUGE', 'Pandas', 'SacreBLEU', 'NLTK' ]
+      detailsPage: 'AI project fine-tuned for text summarization',
+      technologies: ['Python', 'TensorFlow', 'Hugging Face', 'ROUGE', 'Pandas', 'SacreBLEU' ]
     },
     {
       id: 5,
@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Multi-Part 3D Viewer',
       description: 'This project allows visualizing and customizing of STL files and other 3D model formats as well. Useful for loading complex 3D models that has multiple folders containing multiple 3D files. Files can be viewed independently, as a single component or as a unified component.',
       image: '3D-Viewer-Project.png',
-      detailsPage: '/three-js',
+      detailsPage: '3D file viewer to customize and assemble 3D components',
       technologies: ['Three.js', 'JavaScript', 'HTML', 'CSS']
     },
     {
@@ -119,7 +119,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'DataForm Bot',
       description: 'An RPA solution built with UiPath that automates the process of filling out web forms using customer data from an Excel file. The bot navigates to a to a local web app and populates forms with user details like name, address, email, and phone.',
       image: 'RPA-Project.png',
-      detailsPage: '/rpa',
+      detailsPage: 'Robot automating web form filling using UiPath',
       technologies: ['UiPath', 'Visual Basic', 'JavaScript', 'Excel']
     },
     {
@@ -128,7 +128,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'JMS QueueFlow Processor',
       description: 'A Spring Boot-based JMS messaging system using ActiveMQ, consisting of three microservices working together for message processing and communication. It uses subscribe-publish model to process messages asynchronously and a REST API.',
       image: 'JMS-Project.png',
-      detailsPage: '/jms',
+      detailsPage: 'A JMS messaging system using ActiveMQ',
       technologies: ['Java', 'JMS', 'ActiveMQ', 'MySQL']
     },
     {
@@ -137,7 +137,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'GitHub Actions & Workflows',
       description: 'An implementation of GitHub Actions and Workflows to streamline CI/CD processes directly within GitHub. Uses a workflows.yml file for tasks such as building Maven projects and notification.yml workflow that sends event-triggered notifications (push, closed, merge) to a Microsoft Teams channel.',
       image: 'GitHub_Workflows.png',
-      detailsPage: '/github',
+      detailsPage: 'GitHub Actions and Workflows to streamline CI/CD processes',
       technologies: ['GitHub Actions', 'Docker', 'Kubernetes', 'Teams', 'GitHub Workflows']
     },
     {
@@ -146,7 +146,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Dockerized CI/CD Pipeline',
       description: 'A Docker-based solution for automating CI/CD processes and running integrated full-stack applications. Docker containers run on Linux Ubuntu to encapsulate both the Angular front-end and Spring Boot back-end applications.',
       image: 'Docker-Project.png',
-      detailsPage: '/docker',
+      detailsPage: 'Docker-based CI/CD pipeline',
       technologies: ['Jenkins', 'Docker', 'Kubernetes', 'Linux']
     },
   ];

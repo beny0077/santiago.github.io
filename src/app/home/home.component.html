@@ -14,7 +14,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title">Hi, I'm Santiago Arteaga</h1>
-      <p>Full Stack Developer | Problem Solver | Innovator</p>
+      <p>Full Stack Developer | Passionate About Technology | Seeking Challenges</p>
     </section>
 
     <!-- About Section -->
@@ -47,7 +47,7 @@
         <h3>Data Center Migration</h3>
         <ul>
           <li>Led the re-architecture and migration of 7 critical FedEx applications to a new Date Center, reducing build times by 20% and ensuring independent deployment pipelines.</li>
-          <li>Contributed to $400M in annual savings and earned the Bravo Zulu Award for leadership and contributions.</li>
+          <li class="award-highlight">Contributed to $400M in annual savings and earned the Bravo Zulu Award for leadership and contributions.</li>
         </ul>
         <h3>Mainframe Initiative</h3>
         <ul>
@@ -60,7 +60,7 @@
         <h3>Maximo Go Live</h3>
         <ul>
           <li>Coordinated the migration of 19 microservices from IBM mainframe to PCF, resolving compliance gaps and avoiding $9M in delays.</li>
-          <li>Earned the FedEx Quality Driven Management (QDSM) Award for leadership and contributions.</li>
+          <li class="award-highlight">Earned the FedEx Quality Driven Management (QDSM) Award for leadership and contributions.</li>
         </ul>
       </div>
       <!-- Experience Item 2 -->
@@ -78,7 +78,7 @@
         <h3>FedEx Project</h3>
         <ul>
           <li>Enhanced Spring Boot microservices to support new surcharges, boosting operational efficiency and revenue generation.</li>
-          <li>Earned the IT Hall of Fame Award for contributions to this high-impact initiative.</li>
+          <li class="award-highlight">Earned the IT Hall of Fame Award for contributions to this high-impact initiative.</li>
         </ul>
       </div>
       <!--      </div>-->
@@ -118,13 +118,14 @@
           <div *ngFor="let project of filteredProjects; let i = index" class="carousel-item" [class.active]="i === 0">
             <img class="d-block w-100" [src]="'/santiago.github.io/assets/' + project.image" [alt]="project.title + ' - Preview Image'">
             <div class="carousel-caption">
-              <h5>{{ project.title }}</h5>
-              <p>{{ project.description }}</p>
-              <div class="pill-box-container">
-                <span class="pill" *ngFor="let tech of project.technologies">{{ tech }}</span>
-              </div>
-              <button (click)="openDetails(project)" [disabled]="isLearnMoreDisabled">Learn More</button>
-            </div>
+  <h5>{{ project.title }}</h5>
+  <p class="d-none d-md-block">{{ project.description }}</p>
+  <p class="d-block d-md-none">{{ project.detailsPage }}</p> <!-- Using detailsPage for short description -->
+  <div class="pill-box-container">
+    <span class="pill" *ngFor="let tech of project.technologies">{{ tech }}</span>
+  </div>
+  <button (click)="openDetails(project)" [disabled]="isLearnMoreDisabled">Learn More</button>
+</div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
