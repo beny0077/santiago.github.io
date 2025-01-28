@@ -65,6 +65,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     { name: 'Jet_Brains', image: 'Jet_Brains.png' },
     { name: 'Copilot', image: 'Copilot.png' },
     { name: 'Pivotal Cloud Foundry', image: 'PCF.png' },
+    { name: 'SASS CSS', image: 'Sass-css.png' },
+    { name: 'RESTful APIs', image: 'rest-api.svg' },
+    { name: 'DB2', image: 'DB2.png' },
+    { name: 'MySQL', image: 'MySQL.png' },
+    { name: 'Splunk', image: 'Splunk.png' },
+    { name: 'AppDynamics', image: 'AppDynamics.png' },
   ];
 
   projects: Project[] = [
