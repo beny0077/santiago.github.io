@@ -528,3 +528,172 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 /*.navbar nav a:last-child {*/
 /*  margin-right: 0;*/
 /*}*/
+
+
+Due to the way Angular 19 requiring "browser": "src/main.ts" instead of "main": "src/main.ts" and using the public folder by default instead of the src/assets, you must make a few adjustments to deploy and serve the Angular 19 app in gh-pages.
+
+angular.json-------------------
+1. https://github.com/angular-schule/angular-cli-ghpages/tree/main might only take you so far. First follow the Quick Start (local development) steps:
+   --- Clone the GitHub Pages repo -----------------------------------------------------
+   --- npm install -g @angular/cli
+   --- cd your-angular-project
+
+2. Once you have completed coding your app or to test the html component page
+   --- ng add angular-cli-ghpages
+   this command should add new changes but if not, you need to ensure you have the following:
+   -- change outputPath under "options" to  "outputPath": "docs"
+   -- under the "build" array, make sure there is an "output": "/assets/", right under globe/input
+   -- the hgpages command should have also modified a few things but overall, you angular.json should be like:
+
+"build": {
+"builder": "@angular-devkit/build-angular:application",
+"options": {
+"outputPath": "docs",
+"index": "src/index.html",
+"browser": "src/main.ts",
+"polyfills": [
+"zone.js"
+],
+"tsConfig": "tsconfig.app.json",
+"assets": [
+{
+"glob": "**/*",
+"input": "src/assets",
+"output": "/assets/"
+}
+],
+"styles": [
+"node_modules/bootstrap/dist/css/bootstrap.min.css",
+"src/styles.css"
+],
+"scripts": [
+"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+"node_modules/jquery/dist/jquery.min.js"
+]
+},
+"configurations": {
+"production": {
+"budgets": [
+{
+"type": "initial",
+"maximumWarning": "500kB",
+"maximumError": "1MB"
+},
+{
+"type": "anyComponentStyle",
+"maximumWarning": "2kB",
+"maximumError": "4kB"
+}
+],
+"outputHashing": "all"
+},
+"development": {
+"optimization": false,
+"extractLicenses": false,
+"sourceMap": true
+}
+},
+"defaultConfiguration": "production"
+},
+"serve": {
+"builder": "@angular-devkit/build-angular:dev-server",
+"configurations": {
+"production": {
+"buildTarget": "santiago.github.io:build:production"
+},
+"development": {
+"buildTarget": "santiago.github.io:build:development"
+}
+},
+"defaultConfiguration": "development"
+},
+"extract-i18n": {
+"builder": "@angular-devkit/build-angular:extract-i18n"
+},
+"test": {
+"builder": "@angular-devkit/build-angular:karma",
+"options": {
+"polyfills": [
+"zone.js",
+"zone.js/testing"
+],
+"tsConfig": "tsconfig.spec.json",
+"assets": [
+{
+"glob": "**/*",
+"input": "src/assets",
+"output": "/assets/"
+}
+],
+"styles": [
+"src/styles.css"
+],
+"scripts": []
+}
+},
+"deploy": {
+"builder": "angular-cli-ghpages:deploy"
+}
+}
+}
+}
+}
+
+3. Build & Deploy
+   You will need to do a build. without the ghpages command a build will generate a dist folder but with the ghpages command it generates a docs folder. We want to make sure we used the ghpages and it generates the docs folder. To do a build that generates the docs folder, do:
+
+-- ng build --configuration production --base-href /santiago.github.io/
+
+this will generate a docs folder. If the docs folder looks like this:
+project-name/
+-src/
+-public/
+-docs/
+----santiago.github.io/
+------assets
+------browser/
+---------index.html
+---------other files
+
+then you need to manually copy and move the files in the browser/ folder to the docs folder:
+project-name/
+-src/
+-public/
+-docs/
+---index.html
+---other files (chunk, scripts, styles, polyfillls, etc.)
+-----santiago.github.io/
+-----assets
+-----browser
+-------------index.html
+-----------other files (chunk, scripts, styles, polyfillls, etc.)
+
+(Note the above is from what I remember. You might need to build then deploy or deploy build then deploy again)
+
+You might need to do these commands but make sure that at one point you have the structure above when you deploy:
+ng build --output-path docs --base-href /santiago.github.io/
+ng deploy --base-href=/santiago.github.io/
+
+0.)ng build --configuration production --base-href /santiago.github.io/
+1.)ng build --output-path docs --base-href /santiago.github.io/ --deploy-url /santiago.github.io/
+2.)ng deploy --base-href=/santiago.github.io/
+or)ng build --output-path docs --base-href /santiago.github.io/ --deploy-url /santiago.github.io/
+
+0.)ng build --configuration production --base-href /santiago-arteaga.github.io/
+1.)ng build --output-path docs --base-href /santiago.github.io/
+2.)ng deploy --base-href=/santiago.github.io/
+
+
+GitHub Pages needs the index.html to be at the project level instead or one level before the browser directory.
+
+you might even need both, the dist and docs folder, meaning before you install ghpages with the command in Step 2, you need to run the build command and move the files into the dist folder as mentioned earlier. Then do the ghpages command in step 2 and run the build to generate the docs folder.
+
+once i moved the files to docs and deployed, it seems to have removed my files in docs but as long as the files are in the gh=pages repo branch, you are good
+
+(if command does not work due to cp or something else, try to install: npm install --save-dev cpx)
+
+Steps:
+1. ng build --output-path docs --base-href /santiago.github.io/
+2. Move contents of docs/browser to docs
+3. commit and push
+4. ng deploy --base-href=/santiago.github.io/
