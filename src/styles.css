@@ -30,17 +30,21 @@ body {
 
 /* -------------------------------------------------------------Navbar------------------------------------------------------------- */
 .navbar {
-  flex-wrap: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Prevents horizontal overflow */
-}
-
-.navbar nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--navbar-background);
+  padding: 12px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  min-width: 0;
-  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  box-shadow: 0px 2px 10px rgba(0, 255, 255, 0.3);
+  z-index: 10;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
 }
 
 .navbar a {
@@ -52,71 +56,27 @@ body {
   transition: all 0.3s ease-in-out;
   padding: 5px 12px;
   position: relative;
-  white-space: nowrap; /* Prevents text from wrapping */
-  min-width: 0;
-  flex-shrink: 1; /* Allow shrinking */
-}
-
-.navbar a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--electric-cyan), var(--bright-cyan));
-  bottom: -4px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Navbar Hover Effect */
-.navbar a:hover {
-  color: var(--bright-cyan);
-  transition: color 0.3s ease-in-out;
-}
-
-.navbar a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .navbar nav {
-    gap: 10px;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
   }
 
   .navbar a {
-    font-size: 1rem;
-    padding: 4px 10px;
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 4px 10px; /* Adjust padding for smaller screens */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   .navbar {
-    flex-direction: row;
-    gap: 5px;
-  }
-
-  .navbar nav {
-    gap: 5px;
+    padding: 8px 10px; /* Further adjust padding for very small screens */
   }
 
   .navbar a {
-    font-size: 0.9rem;
-    padding: 3px 8px;
-  }
-}
-
-@media (max-width: 400px) {
-  .navbar a {
-    font-size: 0.8rem;
-    padding: 2px 6px;
+    font-size: 0.9rem; /* Further adjust font size for very small screens */
+    padding: 3px 8px; /* Further adjust padding for very small screens */
   }
 }
 /* ------------------------------------------------------------- End Navbar ------------------------------------------------------------- */
