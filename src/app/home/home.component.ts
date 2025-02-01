@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Full Stack E-Commerce',
       description: 'An integrated Angular 9, Spring Boot, and MySQL web application. It allows users to browse, shop, and manage their accounts securely using Okta authentication.',
       image: 'Ecommerce-Project.png',
-      shortDescription: 'An integrated Angular 9, Spring Boot, and MySQL web application',
+      shortDescription: 'An Angular 9, Spring Boot, MySQL, and Okta web application',
       detailsPage: 'An Spring Boot integrated with Angular using Okta',
       technologies: ['Angular', 'Spring Boot', 'HTML', 'CSS', 'JavaScript', 'Okta', 'Sql_Server', "Okta"]
     },
@@ -152,7 +152,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'GitHub Actions & Workflows',
       description: 'An implementation of GitHub Actions and Workflows to streamline CI/CD processes directly within GitHub. Uses a workflows.yml file for tasks such as building Maven projects and notification.yml workflow that sends event-triggered notifications (push, closed, merge) to a Microsoft Teams channel.',
       image: 'GitHub_Workflows.png',
-      shortDescription: 'GitHub Actions and Workflows to streamline CI/CD processes',
+      shortDescription: 'GitHub Actions and Workflows for CI/CD processes',
       detailsPage: 'GitHub Actions and Workflows to streamline CI/CD processes',
       technologies: ['GitHub Actions', 'Docker', 'Kubernetes', 'Teams', 'GitHub Workflows']
     },
