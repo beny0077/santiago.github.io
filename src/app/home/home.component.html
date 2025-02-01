@@ -12,29 +12,19 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title">Hello, I'm Santiago Arteaga</h1>
-      <p>Full Stack Developer | Passionate About Technology | Seeking Challenges</p>
+      <p>Full Stack Developer Building Scalable Enterprise Applications & Exploring the Future with AI & Machine Learning</p>
     </section>
 
-    <section id="about" class="section" aria-labelledby="about-title">
+    <section id="about" class="about-section" aria-labelledby="about-title">
       <h1 id="about-title">About Me</h1>
-      <p class="text-box">Full Stack Developer with over 4 years of professional
-        experience, specialized in backend microservices and front-end development. My expertise lies in
-        building scalable full-stack applications, implementing DevOps practices, and managing seamless
-        deployments. I thrive in dynamic environments where I can leverage my technical skills to solve complex
-        problems and deliver high-quality solutions.<br><br>
-
-        With a Bachelor of Science in Computer Information Systems and currently pursuing a Master’s in AI & Machine
-        Learning, which fuels my interest in cutting-edge technologies. My personal projects reflect this
-        passion, including building eCommerce applications and working on NLP and AI-based projects. I’m always
-        eager to explore the latest tech stacks, tools, and libraries, staying ahead of industry trends to bring
-        innovative solutions to the table.</p>
+      <p class="about-text-box">👨‍💻Full Stack Developer specializing in enterprise-grade applications, with expertise in both frontend and backend development. I thrive in tackling complex challenges, delivering results-driven solutions, and consistently executing with precision. 🎓Holding a Master’s in Computer Information Systems and currently pursuing a Master’s in AI & Machine Learning to bridge cutting-edge technology with real-world impact.🤖</p>
     </section>
 
-    <section id="experience" class="section" aria-labelledby="experience-title">
+    <section id="experience" class="experience-section" aria-labelledby="experience-title">
       <h1 id="experience-title">Experience</h1>
       <div class="experience-item">
         <h2>Full Stack Developer II</h2>
-        <p><strong>Company:</strong> FedEx Services | <strong>Duration:</strong> January 2023 – Present
+        <p><strong>Company:</strong> FedEx Services | <strong>Duration:</strong> January 2023 – Present</p>
         <h3>CI/CD</h3>
         <ul>
           <li>Implemented CI/CD pipelines using GitHub Actions, automating deployment and testing, resulting in a 15% increase
@@ -96,7 +86,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section" aria-labelledby="skills-title">
+    <section id="skills" class="skills-section" aria-labelledby="skills-title">
       <h1 id="skills-title">Skills</h1>
       <div class="skills-grid">
         <div class="skill-item" *ngFor="let skill of skills">
@@ -104,56 +94,58 @@
         </div>
       </div>
       <div class="skills-names">
-        <span class="pill" *ngFor="let skill of skills">{{ skill.name }}</span>
+        <span class="skill-pill" *ngFor="let skill of skills">{{ skill.name }}</span>
       </div>
     </section>
 
-    <section id="projects" class="projects-section" aria-labelledby="projects-title">
-      <h1 id="projects-title">Projects</h1>
-      <div class="tabs-container">
-        <button
-          *ngFor="let project of filteredProjects; let i = index"
-          [attr.data-bs-target]="'#carouselExampleIndicators'"
-          [attr.data-bs-slide-to]="i"
-          [class.active]="i === selectedProjectIndex"
-          (click)="selectProject(i)">
-          {{ project.category }}
-        </button>
-      </div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" role="region" aria-labelledby="projects-title">
-        <ol class="carousel-indicators">
-          <li *ngFor="let project of filteredProjects; let i = index" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div *ngFor="let project of filteredProjects; let i = index" class="carousel-item" [class.active]="i === 0">
-            <img class="d-block w-100" [src]="'/santiago.github.io/assets/' + project.image" [alt]="project.title + ' - Preview Image'">
-            <div class="carousel-caption">
-  <h5>{{ project.title }}</h5>
-  <p class="d-none d-md-block">{{ project.description }}</p>
-  <p class="d-block d-md-none">{{ project.detailsPage }}</p> <!-- Using detailsPage for short description -->
-  <div class="pill-box-container">
-    <span class="pill" *ngFor="let tech of project.technologies">{{ tech }}</span>
-  </div>
-  <button (click)="openDetails(project)" [disabled]="isLearnMoreDisabled">Learn More</button>
-</div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+ <section id="projects" class="project-section" aria-labelledby="project-title">
+   <h1 id="project-title">Projects</h1>
+   <div class="project-content">
+     <div class="tabs-container">
+       <button
+         *ngFor="let project of filteredProjects; let i = index"
+         [attr.data-bs-target]="'#carouselExampleIndicators'"
+         [attr.data-bs-slide-to]="i"
+         [class.active]="i === selectedProjectIndex"
+         (click)="selectProject(i)">
+         {{ project.category }}
+       </button>
+     </div>
+     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" role="region" aria-labelledby="project-title">
+       <ol class="carousel-indicators">
+         <li *ngFor="let project of filteredProjects; let i = index" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+       </ol>
+       <div class="carousel-inner">
+         <div *ngFor="let project of filteredProjects; let i = index" class="carousel-item" [class.active]="i === 0">
+           <img class="d-block w-100" [src]="'/santiago.github.io/assets/' + project.image" [alt]="project.title + ' - Preview Image'">
+           <div class="carousel-caption">
+             <h5>{{ project.title }}</h5>
+             <p class="d-none d-md-block">{{ project.description }}</p>
+             <p class="d-block d-md-none">{{ project.shortDescription }}</p>
+             <div class="pill-box-container">
+               <span class="pill-carousel" *ngFor="let tech of project.technologies">{{ tech }}</span>
+             </div>
+             <button (click)="openDetails(project)" [disabled]="isLearnMoreDisabled">Learn More</button>
+           </div>
+         </div>
+       </div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+       </button>
+     </div>
+   </div>
+ </section>
 
-    <section id="contact" class="section" aria-labelledby="contact-title">
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <h1 id="contact-title">Contact Me</h1>
-      <p class="text-box">Email: <a href="mailto:s.arteaga007@outlook.com">s.arteaga007&#64;outlook.com</a></p>
-      <p class="text-box">Phone: +1 (561) 797-4813</p>
-      <p class="text-box">LinkedIn: <a href="https://linkedin.com/in/santiago" target="_blank" rel="noopener noreferrer">linkedin.com/in/santiago</a></p>
+      <p class="contact-text-box">Email: <a href="mailto:s.arteaga007@outlook.com">s.arteaga007&#64;outlook.com</a></p>
+      <p class="contact-text-box">Phone: +1 (561) 797-4813</p>
+      <p class="contact-text-box">LinkedIn: <a href="https://www.linkedin.com/in/samjd/" target="_blank" rel="noopener noreferrer">linkedin.com/in/santiago</a></p>
     </section>
   </main>
 
