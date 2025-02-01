@@ -22,9 +22,8 @@ body {
 }
 
 .home-container {
-  max-width: 98%;
-  margin: auto;
-  padding: 20px;
+  max-width: 100%;
+  padding: 10px;
   background-image: var(--background-image);
 }
 
@@ -33,8 +32,9 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
+  height: 60px;
   background: var(--navbar-background);
-  padding: 12px 20px;
+  /*padding: 12px 20px;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,30 +54,57 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   transition: all 0.3s ease-in-out;
-  padding: 5px 12px;
+  /*padding: 5px 12px;*/
   position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--electric-cyan), var(--bright-cyan));
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: var(--bright-cyan);
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar a:focus {
+  outline: 2px solid var(--bright-cyan);
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 15px; /* Adjust padding for smaller screens */
-  }
-
-  .navbar a {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-    padding: 4px 10px; /* Adjust padding for smaller screens */
+    flex-wrap: wrap;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .navbar {
-    padding: 8px 10px; /* Further adjust padding for very small screens */
+    flex-direction: column;
+    gap: 10px;
   }
+}
 
-  .navbar a {
-    font-size: 0.9rem; /* Further adjust font size for very small screens */
-    padding: 3px 8px; /* Further adjust padding for very small screens */
-  }
+.navbar nav a {
+  margin-right: 1px;
+}
+
+.navbar nav a:last-child {
+  margin-right: 0;
 }
 /* ------------------------------------------------------------- End Navbar ------------------------------------------------------------- */
 
