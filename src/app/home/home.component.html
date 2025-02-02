@@ -1,10 +1,10 @@
 <div class="home-container">
   <header class="navbar" role="navigation">
     <nav>
-      <a href="#about">About | </a>
-      <a href="#experience">Experience | </a>
-      <a href="#skills">Skills | </a>
-      <a href="#projects">Projects | </a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -140,7 +140,7 @@
                 <p class="d-none d-md-block">{{ project.description }}</p>
                 <p class="d-block d-md-none">{{ project.shortDescription }}</p>
                 <div class="pill-box-container">
-                  <span *ngFor="let tech of project.technologies" class="pill-carousel">{{ tech }}</span>
+                  <span *ngFor="let tech of project.technologies" class="skill-pill">{{ tech }}</span>
                 </div>
                 <button (click)="openDetails(project)" [disabled]="isLearnMoreDisabled">Learn More</button>
               </div>
