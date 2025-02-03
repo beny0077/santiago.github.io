@@ -98,10 +98,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       id: 3,
-      category: 'AI Sentiment',
+      category: 'AI NLP',
       title: 'AI Sentiment Service',
       description: 'AI sentiment analysis service that predict whether a movie review is positive or negative. Built using the Hugging Face library and the T5 model, this service processes a large dataset of 25,000 reviews and trained over 12 epochs.',
-      image: 'Prediction-Project.jpg',
+      image: 'NLP-Project.jpg',
       shortDescription: 'AI sentiment analysis service.',
       detailsPage: 'AI sentiment analysis service',
       technologies: ['Python', 'TensorFlow', 'OpenCV', 'Hugging Face', 'Flask']
@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       category: 'AI Summarizer',
       title: 'AI Note Summarizer',
       description: 'An AI project with optimized hyperparameters to fine-tune the T5 transformer model for text summarization tasks. It has a comprehensive grid search strategy to identify various combinations of hyperparameters to generate high-quality summaries.',
-      image: 'square aspect ratio.jpg',
+      image: 'AI-Summarizer-project.jpg',
       shortDescription: 'AI project fine-tuned for text summarization',
       detailsPage: '/summarizer',
       technologies: ['Python', 'TensorFlow', 'Hugging Face', 'ROUGE', 'Pandas', 'SacreBLEU']
