@@ -80,18 +80,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
       id: 1,
       category: 'Ecommerce',
       title: 'E-Commerce Application',
-      description: 'An integrated Angular 9, Spring Boot, and MySQL web application. It allows users to browse, shop, and manage their accounts securely using Okta authentication.',
-      image: 'Ecommerce-Project.jpeg',
+      description: 'An integrated Anular 9, Spring Boot, and MySQL web application. It allows users to browse, shop, and manage their accounts securely using Okta authentication.',
+      image: 'Ecommerce-Project.jpg',
       shortDescription: 'Angular 9, Spring Boot, MySQL, and Okta web application',
       detailsPage: 'An Spring Boot integrated with Angular using Okta',
       technologies: ['Angular', 'Spring Boot', 'HTML', 'CSS', 'JavaScript', 'Okta', 'Sql_Server', "Okta"]
     },
     {
       id: 2,
-      category: 'CICD',
+      category: 'CICD Jenkins',
       title: 'CI/CD Workflow',
       description: 'A CI/CD pipeline project using Jenkins to streamline the build and deployment processes. It is setup with SSH-based authentication for secure repo access and utilizes Jenkins credentials for integration. Jenkinsfiles handle build and deploy configurations to deploy to Minikube.',
-      image: 'CICD-Project.webp',
+      image: 'CICD-Jenkins-Project.jpg',
       shortDescription: 'A CI/CD pipeline project using Jenkins',
       detailsPage: 'A CI/CD pipeline project using Jenkins',
       technologies: ['Jenkins', 'Docker', 'Kubernetes', 'GitHub Actions', 'Junit']
@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       category: 'AI Summarizer',
       title: 'AI Note Summarizer',
       description: 'An AI project with optimized hyperparameters to fine-tune the T5 transformer model for text summarization tasks. It has a comprehensive grid search strategy to identify various combinations of hyperparameters to generate high-quality summaries.',
-      image: 'Summarizer-project.webp',
+      image: 'square aspect ratio.jpg',
       shortDescription: 'AI project fine-tuned for text summarization',
       detailsPage: '/summarizer',
       technologies: ['Python', 'TensorFlow', 'Hugging Face', 'ROUGE', 'Pandas', 'SacreBLEU']
@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       category: 'RPA',
       title: 'DataForm Bot',
       description: 'An RPA solution built with UiPath that automates the process of filling out web forms using customer data from an Excel file. The bot navigates to a to a local web app and populates forms with user details like name, address, email, and phone.',
-      image: 'RPA-Project.png',
+      image: 'RPA-Project.jpg',
       shortDescription: 'An RPA solution built with UiPath',
       detailsPage: 'Robot automating web form filling using UiPath',
       technologies: ['UiPath', 'Visual Basic', 'JavaScript', 'Excel']
@@ -151,7 +151,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       category: 'GitHub Workflows',
       title: 'GitHub Workflows',
       description: 'An implementation of GitHub Actions and Workflows to streamline CI/CD processes directly within GitHub. Uses a workflows.yml file for tasks such as building Maven projects and notification.yml workflow that sends event-triggered notifications (push, closed, merge) to a Microsoft Teams channel.',
-      image: 'GitHub-Workflows-Project.jpg',
+      image: 'GitHub-Actions-Project.jpg',
       shortDescription: 'GitHub Actions and Workflows for CI/CD processes',
       detailsPage: 'GitHub Actions and Workflows to streamline CI/CD processes',
       technologies: ['GitHub Actions', 'Docker', 'Kubernetes', 'Teams', 'GitHub Workflows']
